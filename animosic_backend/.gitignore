@@ -1,0 +1,18 @@
+ECHO is on.
+
+# Environment and sensitive files
+.env
+.cache
+
+# Model and scaler files
+*.pkl
+
+# Database file
+main_database.json
+
+# Python cache and temporary files
+__pycache__/
+*.pyc
+
+# IDE-specific files 
+.vscode/
