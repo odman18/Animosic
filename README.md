@@ -11,22 +11,24 @@ Animosic is a mood-based music playlist generation system that creates personali
 2. Set up a virtual environment
 
 3. Install dependencies
+   ```bash
 pip install -r requirements.txt
 
 4. Create a .env file with your Spotify API credentials:
-
+   ```bash
 SPOTIFY_CLIENT_ID=your_client_id_here
 SPOTIFY_CLIENT_SECRET=your_client_secret_here
 
 Refer to .env.example for the format.
 
 5. Generate required files:
-
+   ```bash
 Database: Run python convert_csv_to_json.py with Final_database_predicted1.csv to generate main_database.json.
 
 Model and Scaler: Run python Animosic_Model.ipynb with the training dataset to generate animosic_scaler1.pkl and animosic_mood_model1.pkl.
 
 6. Run the application:
+   ```bash
 python main.py
 
 Contributing

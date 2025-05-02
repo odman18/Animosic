@@ -34,7 +34,7 @@ mood_keywords = {
 }
 
 def fetch_and_predict_tracks(query, genre_for_estimation, limit, used_uris, target_mood, scaler, model):
-    offset = random.randint(0, 50)
+    offset = random.randint(0, 25)
     try:
         results = sp.search(q=query, type='track', limit=limit, offset=offset)
     except Exception as e:
