@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animosic - Welcome</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Flamenco:wght@400&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="assets/Spotify_logo_black.png" alt="Spotify Logo" class="spotify-logo">
+    </header>
+    <div id="greeting-modal" class="modal">
+        <div class="modal-content">
+            <p>Hi! I'm Lunabot. How are you feeling today? 😊</p>
+            <button onclick="closeGreeting()">Close</button>
+        </div>
+    </div>
+    <div class="welcome-container">
+        <div class="welcome-content">
+            <div class="welcome-text">
+                <h1 class="animosic-title">Ánimosic</h1>
+                <p><span style="color: #3EB7B2;">A Mood-Based </span> Music Playlist Generator</p>
+            </div>
+            <img src="assets/cassette.png" alt="cassette Image" class="welcome-image">
+        </div>
+
+        <div class="steps-container">
+            <div class="step-item">
+                <hr>
+                <div class="step-label"><span style="color: #3EB7B2;">Step</span> 1</div>
+                <p>Connect Spotify</p>
+            </div>
+            <div class="step-item">
+                <hr>
+                <div class="step-label"><span style="color: #3EB7B2;">Step</span> 2</div>
+                <p>Select Mood</p>
+            </div>
+            <div class="step-item">
+                <hr>
+                <div class="step-label"><span style="color: #3EB7B2;">Step</span> 3</div>
+                <p style="font-size: 1.4rem;">Select Genre & Artist for Personalized Playlist</p>
+            </div>
+            <div class="step-item">
+                <hr>
+                <div class="step-label"><span style="color: #3EB7B2;">Step</span> 4</div>
+                <p>Generate Playlist</p>
+            </div>
+        </div>
+        <a href="connect_spotify.html" class="begin-button">Let's Begin</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

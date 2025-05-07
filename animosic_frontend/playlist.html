@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animosic - Your Playlist</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Flamenco:wght@400&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-equalizer">
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+    </div>
+    <header>
+        <img src="assets/Spotify_logo_black.png" alt="Spotify Logo" class="spotify-logo">
+    </header>
+    <div class="playlist-container">
+        <div class="step-label"><span style="color: #3EB7B2;">Step</span> 4</div>
+        <h1 id="playlist-title"></h1>
+        <div id="track-list" class="track-list"></div>
+        <button onclick="addToSpotify()">Add to Spotify</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

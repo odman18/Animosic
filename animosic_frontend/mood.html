@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animosic - Select Mood</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Flamenco:wght@400&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="assets/Spotify_logo_black.png" alt="Spotify Logo" class="spotify-logo">
+    </header>
+    <div class="mood-container">
+        <div class="mood-content">
+            <div class="mood-text">
+                <div class="step-label"><span style="color: #3EB7B2;">Step</span> 2</div>
+                <h1>Select your current mood</h1>
+            </div>
+            <img src="assets/cassette.png" alt="cassette Image" class="mood-image">
+        </div>
+        <div class="mood-list">
+            <div class="mood-item" data-mood="Focus/Study" data-color="#033F63">
+                <span>Focus/Study</span>
+                <div class="waveform"></div>
+                <button class="select-button" onclick="selectMood('Focus/Study', '#033F63')">Select</button>
+            </div>
+            <div class="mood-item" data-mood="Joyful" data-color="#D6BB30">
+                <span>Joyful</span>
+                <div class="waveform"></div>
+                <button class="select-button" onclick="selectMood('Joyful', '#D6BB30')">Select</button>
+            </div>
+            <div class="mood-item" data-mood="Party" data-color="#DA5454">
+                <span>Party</span>
+                <div class="waveform"></div>
+                <button class="select-button" onclick="selectMood('Party', '#DA5454')">Select</button>
+            </div>
+            <div class="mood-item" data-mood="Melancholic" data-color="#4682B4">
+                <span>Melancholic</span>
+                <div class="waveform"></div>
+                <button class="select-button" onclick="selectMood('Melancholic', '#4682B4')">Select</button>
+            </div>
+            <div class="mood-item" data-mood="Calm" data-color="#424C55">
+                <span>Calm</span>
+                <div class="waveform"></div>
+                <button class="select-button" onclick="selectMood('Calm', '#424C55')">Select</button>
+            </div>
+            <div class="mood-item" data-mood="Reflective" data-color="#46546E">
+                <span>Reflective</span>
+                <div class="waveform"></div>
+                <button class="select-button" onclick="selectMood('Reflective', '#46546E')">Select</button>
+            </div>
+            <div class="mood-item" data-mood="Romantic" data-color="#F07167">
+                <span>Romantic</span>
+                <div class="waveform"></div>
+                <button class="select-button" onclick="selectMood('Romantic', '#F07167')">Select</button>
+            </div>
+            <div class="mood-item" data-mood="Workout" data-color="#915A4A">
+                <span>Workout</span>
+                <div class="waveform"></div>
+                <button class="select-button" onclick="selectMood('Workout', '#915A4A')">Select</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

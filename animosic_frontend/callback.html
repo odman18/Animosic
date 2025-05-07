@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+    <script>
+        // Capture the access token from the URL and redirect to mood.html
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const accessToken = urlParams.get("access_token");
+
+            if (accessToken) {
+                localStorage.setItem("spotify_access_token", accessToken);
+                window.location.href = "/mood.html?access_token=" + accessToken;
+            } else {
+                alert("Failed to retrieve access token.");
+                window.location.href = "/mood.html";
+            }
+        };
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html>

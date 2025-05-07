@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animosic - Select Genre and Artist</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Flamenco:wght@400&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-equalizer">
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+    </div>
+    <header>
+        <img src="assets/Spotify_logo_black.png" alt="Spotify Logo" class="spotify-logo">
+    </header>
+    <div class="genre-artist-container">
+        <div class="genre-artist-content">
+            <div class="genre-artist-text">
+                <div class="step-label"><span style="color: #3EB7B2;">Step</span> 3</div>
+                <h1>Let’s customize your playlist</h1>
+                <a href="name_playlist.html" class="skip-link">Skip</a>
+                <h2>What’s your favorite genre?</h2>
+                <div class="genre-list">
+                    <div class="genre-item" onclick="selectGenre('Afrobeat')">Afrobeat</div>
+                    <div class="genre-item" onclick="selectGenre('Pop')">Pop</div>
+                    <div class="genre-item" onclick="selectGenre('Rock')">Rock</div>
+                </div>
+                <div id="artist-section" style="display: none;">
+                    <h2>Select your favorite artist</h2>
+                    <div id="artist-list" class="artist-list"></div>
+                </div>
+            </div>
+            <img src="assets/singer.png" alt="Singer Image" class="genre-artist-image">
+        </div>
+        <button id="generate-button" style="display: none;" onclick="goToNamePlaylist()">Generate Playlist</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animosic - Name Your Playlist</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Flamenco:wght@400&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-equalizer">
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+    </div>
+    <header>
+        <img src="assets/Spotify_logo_black.png" alt="Spotify Logo" class="spotify-logo">
+    </header>
+    <div class="name-playlist-container">
+        <div class="musical-note">♪</div>
+        <h1>Name your playlist</h1>
+        <div class="mood-reminder">
+            <span id="selected-mood"></span>
+        </div>
+        <input type="text" id="playlist-name" placeholder="My Animosic Playlist" required>
+        <div class="button-container">
+            <button id="generate-button" onclick="generatePlaylist()">Done</button>
+            <span id="loading-message" style="display: none; margin-left: 10px;">Loading...</span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

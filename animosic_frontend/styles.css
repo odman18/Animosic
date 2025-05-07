@@ -1,0 +1,532 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #278783;
+    color: #FFEBD0;
+    transition: background-color 0.6s; /* Smooth transition for background color changes */
+}
+
+/* Header with Spotify Logo */
+header {
+    background-color: inherit; /* Inherits body background color */
+    padding: 10px 0 0 10px;
+    text-align: left;
+    transition: background-color 0.6s; /* Smooth transition for background color changes also */
+}
+
+.spotify-logo {
+    width: 35px;
+}
+
+/* Modal for Lunabot Greeting */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #FFEBD0;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 90%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    color: #278783;
+}
+
+.modal-content button {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.modal-content button:hover {
+    background-color: #c0392b;
+}
+.steps-container{
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: stretch; 
+    margin: 40px 0;
+    gap: 20px;
+    flex-wrap: wrap;
+
+}
+.step-item{
+    flex: 1;
+    min-width: 200px;
+    max-width: 250px;
+    text-align: left;
+}
+.step-item hr {
+    border: 1px solid #FFEBD0;
+    margin: 0 auto 10px 0;
+    width: 80%; 
+    max-width: none;
+}
+.step-item p {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FFEBD0;
+    line-height: 1.5; 
+}
+
+.step-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #FFEBD0;
+    margin-bottom: 5px; 
+    text-align: left;
+    display: inline-block;
+}
+
+/* Welcome Page */
+.welcome-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 20px 20px;
+    text-align: center;
+}
+
+.welcome-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px; 
+}
+
+.welcome-text {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+    flex-grow: 1; 
+}
+
+.animosic-title {
+    font-family: 'Flamenco', cursive;
+    font-size: 9rem;
+    color: #FFEBD0;
+    margin: 0;
+}
+
+.welcome-text p {
+    font-size: 2.3rem;
+    margin: 10px 0;
+}
+
+.welcome-image {
+    flex: 1;
+    max-width: 600px; 
+    min-width: 250px;
+    object-fit: contain;
+}
+
+/* Let's Begin Button */
+.begin-button {
+    display: inline-block;
+    background-color: #FFEBD0;
+    color: #278783;
+    padding: 15px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.begin-button:hover {
+    background-color: #e0d1b5;
+}
+
+/* Mood Selection Page */
+.mood-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 20px 20px;
+}
+
+.mood-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px; 
+}
+
+.mood-text {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+    flex-grow: 1; 
+}
+
+.mood-text h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.mood-image {
+    flex: 1;
+    max-width: 600px; 
+    min-width: 250px;
+    object-fit: contain; 
+}
+
+.mood-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.mood-item {
+    background-color: #FFEBD0;
+    color: #278783;
+    padding: 20px;
+    border-radius: 15px;
+    width: 200px;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: scale(1);
+}
+
+.mood-item span {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.select-button {
+    display:none;
+    background-color: #278783;
+    color: #FFEBD0;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.mood-item.active .select-button {
+    display:inline-block;
+}
+
+.select-button:hover {
+    background-color: #1f6b67;
+}
+
+/* Genre and Artist Page */
+.genre-artist-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.genre-artist-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.genre-artist-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.genre-artist-text h1 {
+    font-size: 3rem;
+    margin: 0 0 10px;
+}
+
+.genre-artist-text h2 {
+    font-size: 2rem;
+    margin: 20px 0 10px;
+}
+
+.skip-link {
+    color: #FFEBD0;
+    text-decoration: underline;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.skip-link:hover {
+    color: #e0d1b5;
+}
+
+/* Background Equalizer Effect */
+.background-equalizer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; 
+    opacity: 0.3; 
+    pointer-events: none; 
+}
+
+.equalizer-bar {
+    position: absolute;
+    bottom: 0;
+    width: 5px;
+    background: linear-gradient(to top, #FFEBD0, transparent);
+    animation: equalizer 2.5s infinite ease-in-out;
+}
+/* Position multiple bars across the screen */
+.equalizer-bar:nth-child(1) { left: 10%; height: 50px; animation-delay: 0s; }
+.equalizer-bar:nth-child(2) { left: 20%; height: 70px; animation-delay: 0.2s; }
+.equalizer-bar:nth-child(3) { left: 30%; height: 40px; animation-delay: 0.4s; }
+.equalizer-bar:nth-child(4) { left: 40%; height: 60px; animation-delay: 0.6s; }
+.equalizer-bar:nth-child(5) { left: 50%; height: 80px; animation-delay: 0.8s; }
+.equalizer-bar:nth-child(6) { left: 60%; height: 30px; animation-delay: 1s; }
+.equalizer-bar:nth-child(7) { left: 70%; height: 50px; animation-delay: 1.2s; }
+.equalizer-bar:nth-child(8) { left: 80%; height: 65px; animation-delay: 1.4s; }
+.equalizer-bar:nth-child(9) { left: 90%; height: 45px; animation-delay: 1.6s; }
+
+@keyframes equalizer {
+    0% { height: 70px; }
+    50% { height: 250px; }
+    100% { height: 70px; }
+}
+
+
+.genre-list, .artist-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.genre-item, .artist-item {
+    background-color: #FFEBD0;
+    color: #278783;
+    padding: 15px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.genre-item:hover, .artist-item:hover {
+    transform: scale(1.05);
+    background-color: #e0d1b5;
+}
+
+.genre-item.selected, .artist-item.selected {
+    background-color: var(--mood-color);
+    color: #fff;
+}
+
+.genre-artist-image {
+    flex: 1;
+    max-width: 450px; 
+    min-width: 250px;
+}
+
+.genre-artist-container button {
+    background-color: #FFEBD0;
+    color: #278783;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.genre-artist-container button:hover {
+    background-color: #e0d1b5;
+}
+
+/* Name Playlist Page */
+.name-playlist-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(45deg, rgba(255, 235, 208, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 235, 208, 0.1) 50%, rgba(255, 235, 208, 0.1) 75%, transparent 75%, transparent);
+    background-size: 40px 40px;
+}
+
+.musical-note {
+    font-size: 3rem;
+    color: #FFEBD0;
+    margin-bottom: 20px;
+}
+
+.name-playlist-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.mood-reminder {
+    background: linear-gradient(45deg, #FFEBD0, #e0d1b5);
+    color: #278783;
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.mood-reminder span {
+    font-weight: bold;
+}
+
+.name-playlist-container input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 2px solid #FFEBD0;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    background-color: transparent;
+    color: #FFEBD0;
+    box-shadow: 0 0 10px rgba(255, 235, 208, 0.5);
+}
+
+.name-playlist-container input::placeholder {
+    color: #FFEBD0;
+    opacity: 0.7;
+}
+
+.name-playlist-container button {
+    background-color: #FFEBD0;
+    color: #278783;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.name-playlist-container button:hover {
+    background-color: #e0d1b5;
+}
+.button-container {
+    display: flex;
+    align-items: center;
+}
+
+#loading-message {
+    color: #FFEBD0;
+    font-size: 1rem;
+}
+
+/* Playlist Display Page */
+.playlist-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.playlist-container h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.track-list {
+    background-color: #FFEBD0;
+    color: #278783;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.track-list div {
+    padding: 10px;
+    border-bottom: 1px solid #278783;
+}
+
+.track-list div:last-child {
+    border-bottom: none;
+}
+
+.playlist-container button {
+    background-color: #FFEBD0;
+    color: #278783;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.playlist-container button:hover {
+    background-color: #e0d1b5;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .welcome-content, .mood-content, .genre-artist-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .welcome-text, .mood-text, .genre-artist-text {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .welcome-image, .mood-image, .genre-artist-image {
+        max-width: 400px; 
+    }
+
+    .steps-container {
+        flex-direction: column; 
+        gap: 30px;
+    }
+
+    .step-item {
+        max-width: 100%; 
+    }
+}
+
+@media (max-width: 600px) {
+    .animosic-title {
+        font-size: 3rem;
+    }
+
+    .welcome-text p, .mood-text h1, .genre-artist-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .mood-item {
+        width: 150px;
+    }
+
+    .genre-item, .artist-item {
+        padding: 10px 15px;
+    }
+}
