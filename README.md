@@ -70,6 +70,7 @@ Open and run `Animosic_Model.ipynb` using your training dataset. This will gener
 animosic_scaler1.pkl
 animosic_mood_model1.pkl
 ```
+Necessary .csv files can be found inside `CSV_Data` folder
 
 ### 6. Run the Application
 
