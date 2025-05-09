@@ -431,7 +431,7 @@ header {
     background-color: #e0d1b5;
 }
 .button-container {
-    display: flex;
+    display: inline;
     align-items: center;
 }
 

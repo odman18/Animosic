@@ -6,6 +6,30 @@
     <title>Animosic - Name Your Playlist</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Flamenco:wght@400&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #278783;
+        }
+        /* Preload mood color from localStorage */
+        :root {
+            --mood-color: #278783;
+        }
+        body {
+            background-color: var(--mood-color);
+        }
+        header {
+            background-color: var(--mood-color);
+        }
+    </style>
+    <script>
+        // Set initial mood color before DOM loads
+        document.addEventListener('DOMContentLoaded', () => {
+            const moodColor = localStorage.getItem('moodColor') || '#278783';
+            document.documentElement.style.setProperty('--mood-color', moodColor);
+            document.body.style.backgroundColor = moodColor;
+            document.querySelector('header').style.backgroundColor = moodColor;
+        });
+    </script>
 </head>
 <body>
     <div class="background-equalizer">

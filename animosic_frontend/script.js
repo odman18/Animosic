@@ -63,16 +63,6 @@ if (window.location.pathname.includes('mood.html')) {
     }
 }
 
-// Apply mood color to subsequent pages
-if (window.location.pathname.includes('genre_artist.html') || 
-    window.location.pathname.includes('name_playlist.html') || 
-    window.location.pathname.includes('playlist.html')) {
-    const moodColor = localStorage.getItem('moodColor') || '#278783';
-    document.body.style.backgroundColor = moodColor;
-    document.querySelector('header').style.backgroundColor = moodColor;
-    document.documentElement.style.setProperty('--mood-color', moodColor);
-}
-
 // Genre and Artist selection
 let selectedGenre = null;
 let selectedArtist = null;
@@ -256,6 +246,13 @@ async function addToSpotify() {
         return;
     }
 
+    // Show loading state
+    const addButton = document.getElementById('add-to-spotify-button');
+    const loadingMessage = document.getElementById('loading-message');
+    addButton.disabled = true;
+    addButton.textContent = 'Add to Spotify';
+    loadingMessage.style.display = 'inline';
+
     try {
         console.log("Fetching user ID...");
         const userResponse = await fetch("https://api.spotify.com/v1/me", {
@@ -317,6 +314,7 @@ async function addToSpotify() {
         if (addResponse.ok) {
             console.log("Playlist added successfully!");
             alert("Playlist added to your Spotify!");
+            window.location.href = 'index.html'; // Redirect to home
         } else {
             const errorText = await addResponse.text();
             console.error("Failed to add tracks:", addResponse.status, errorText);
@@ -328,5 +326,10 @@ async function addToSpotify() {
         // Clear token if it fails/expires
         localStorage.removeItem("spotify_access_token");
         window.location.href = "http://127.0.0.1:8000/login"; // Retry login
+    } finally {
+        // Reset loading state
+        addButton.disabled = false;
+        addButton.textContent = 'Add to Spotify';
+        loadingMessage.style.display = 'none';
     }
 }
